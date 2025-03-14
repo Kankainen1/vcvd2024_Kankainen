@@ -30,7 +30,6 @@ def main():
     args.add_argument("--mu", type=float, default=0.8)
     args.add_argument("--alpha", type=float, default=0)
     a = args.parse_args()
-    
     kappa = np.linspace(0, a.slip / 100, 100)
     braking, side = compute_forces(kappa, a.alpha, a.weight, a.mu)
     plot_forces(kappa, braking, side, a.alpha)
